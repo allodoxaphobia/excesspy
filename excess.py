@@ -107,6 +107,10 @@ def main():
 			u1=urllib2.urlopen(XSS_SHEET)
 			XSS_DOM = parse(u1)
 			h = HTMLParser.HTMLParser()
+		except Exception, e:
+			print "Failed to retrieve XSS chreat sheet, exiting\n" + e.message
+			exit(2)
+		try:
 			for node in XSS_DOM.getElementsByTagName("attack"):
 				name = node.getElementsByTagName("name")[0].childNodes[0].nodeValue
 				code = node.getElementsByTagName("code")[0].childNodes[0].nodeValue
@@ -127,7 +131,7 @@ def main():
 				msg = buildmsg(MAIL_FROM, MAIL_TO,"In Extra Header " + name ,h.unescape(code),"In Extra Header " + name,True,False)				
 				sendrawmail(MAIL_FROM, MAIL_TO, msg)
 		except Exception, e2:
-			print "Failed to retrieve XSS chreat sheet, exiting\n" + e2.message
+			print "Error sending mail: \n" + e.message
 			exit(2)
 
 def init():
