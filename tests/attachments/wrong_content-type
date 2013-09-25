@@ -1,0 +1,20 @@
+From: $from$
+To: $to$
+Subject: $subject$
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary=001a11c2047aea2db404e707874b
+
+--001a11c2047aea2db404e707874b
+Content-Type: text/plain; charset=UTF-8
+
+Test; attachment filename different from content-type name.
+
+--001a11c2047aea2db404e707874b
+Content-Type: application/octet-stream; name="image001.jpg"
+Content-Disposition: attachment; filename="image001.exe"
+Content-Transfer-Encoding: base64
+X-Attachment-Id: f_hlxcd6xm0
+
+IAMINVALID
+--001a11c2047aea2db404e707874b
+
