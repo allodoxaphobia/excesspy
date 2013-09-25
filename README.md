@@ -30,6 +30,7 @@ DIR:
 
 
 Options:
+----------
   -h, --help            show this help message and exit
   -s SMTP_SERVER        
   -p SMTP_PORT          
@@ -40,7 +41,7 @@ Options:
 
 
 Requirements
-============
+---------------
 Requires the following libraries:
 	*	smtplib
 	*	sys
